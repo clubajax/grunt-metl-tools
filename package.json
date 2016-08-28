@@ -1,0 +1,36 @@
+{
+  "name": "grunt-metl-tools",
+  "version": "0.0.1",
+  "description": "A collection of tools that can be used in any repo that is metl or uses metl as a dependency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clubajax/grunt-metl-tools.git"
+  },
+  "keywords": [
+    "grunt",
+    "metl",
+    "ui",
+    "web",
+    "components"
+  ],
+  "author": "anm9tr@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clubajax/grunt-metl-tools/issues"
+  },
+  "homepage": "https://github.com/clubajax/grunt-metl-tools#readme",
+  "dependencies": {
+    "http-server": "^0.8.0",
+    "crisper": "^1.1.0",
+    "vulcanize": "1.14.8",
+    "grunt-contrib-less": "^1.1.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-exec": "^0.4.6",
+    "grunt-concurrent": "^2.1.0"
+  }
+}
