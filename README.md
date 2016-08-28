@@ -1,3 +1,3 @@
 # metl tools
 
-    grunt install grunt-metl-tools --save-dev
+    npm install clubajax/grunt-metl-tools --save-dev
