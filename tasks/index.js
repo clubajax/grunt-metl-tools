@@ -12,4 +12,5 @@ module.exports = function(grunt) {
 
     load('serve');
     load('less');
+    load('watch');
 };

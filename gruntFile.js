@@ -13,12 +13,12 @@ module.exports = function (grunt) {
                     src:'test/less/main-alt.less',
                     output: 'test/dist/main-alt.css'
                 }
+            },
+            watch:{
+                less:['./test/less/*.less'],
+                scripts:['./test/**/*.js'],
+                port: 35730
             }
-        },
-        watch:{
-            less:['./style/*.less'],
-            scripts:['./components/**/*.html', './components/**/*.js'],
-            port: 35730
         }
     });
 
