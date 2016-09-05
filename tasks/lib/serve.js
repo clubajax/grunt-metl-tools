@@ -2,13 +2,13 @@
 
 module.exports = function (grunt) {
     var
-        gruntConfig = grunt.config('metl.server'),
+        config = grunt.config('metl.serve') || {},
         testServer = {
-            host: 'localhost',
-            port: '8200'
+            host: config.host || 'localhost',
+            port: config.port || '8200',
+            proxy: config.proxy
         },
-        servePath = '.',
-        testServerUrl = 'http://' + testServer.host + ':' + testServer.port;
+        servePath = config.serverPath || '.';
 
     grunt.config('http-server', {
         'dev': {
@@ -25,4 +25,8 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-http-server');
+
+    grunt.registerTask('serve', function () {
+        grunt.task.run('http-server');
+    });
 };

@@ -51,3 +51,22 @@ if(grunt.config('metl.watch')) {
         console.log('changed.file', action, filepath);
     });
 }
+
+//grunt.config('concurrent', {
+//    target: {
+//        tasks: ['watch', 'serve'],
+//        options: {
+//            logConcurrentOutput: true
+//        }
+//    }
+//});
+//grunt.loadNpmTasks('grunt-contrib-watch');
+//grunt.loadNpmTasks('grunt-concurrent');
+//grunt.registerTask('dev', function () {
+//    grunt.task.run('build');
+//    grunt.task.run('less:main');
+//    grunt.task.run('concurrent:target');
+//});
+//grunt.event.on('watch', function (action, filepath) {
+//    console.log('changed.file', action, filepath);
+//});

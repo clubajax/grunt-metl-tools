@@ -1,9 +1,15 @@
 'use strict';
 
 var
-    path = require('path');
+    path = require('path'),
+    lib = path.join(__dirname, 'lib');
 
 module.exports = function(grunt) {
-    //require('./lib/serve');
-    require(path.join(__dirname, 'lib/serve'))(grunt);
+
+    function load (fileName) {
+        require(path.join(lib + '/' + fileName))(grunt);
+    }
+
+    load('serve');
+    load('less');
 };
