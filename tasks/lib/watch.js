@@ -52,7 +52,9 @@ module.exports = function (grunt) {
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.loadNpmTasks('grunt-concurrent');
         grunt.registerTask('dev', function () {
-            grunt.task.run('build');
+            if(grunt.task.exists('build')) {
+                grunt.task.run('build');
+            }
             if(lessFiles) {
                 grunt.task.run('less:main');
             }
@@ -65,28 +67,3 @@ module.exports = function (grunt) {
         console.log('metl.watch not configured');
     }
 };
-//
-//Running "watch" task
-//Waiting...
-//Verifying property watch.css.files exists in config...ERROR
-//>> Unable to process task.
-//    Warning: Required config property "watch.css.files" missing.
-//
-//grunt.config('concurrent', {
-//    target: {
-//        tasks: ['watch', 'serve'],
-//        options: {
-//            logConcurrentOutput: true
-//        }
-//    }
-//});
-//grunt.loadNpmTasks('grunt-contrib-watch');
-//grunt.loadNpmTasks('grunt-concurrent');
-//grunt.registerTask('dev', function () {
-//    grunt.task.run('build');
-//    grunt.task.run('less:main');
-//    grunt.task.run('concurrent:target');
-//});
-//grunt.event.on('watch', function (action, filepath) {
-//    console.log('changed.file', action, filepath);
-//});
