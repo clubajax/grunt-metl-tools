@@ -45,7 +45,9 @@ module.exports = function (grunt) {
     grunt.config('less', lessConfig);
     grunt.loadNpmTasks('grunt-contrib-less');
     // shortcut:
-    grunt.registerTask('ls', 'less:main');
+    grunt.registerTask('ls', function (which) {
+        grunt.task.run('less' + (which ? ':' + which : ':main'));
+    });
     // if not using main, use standard: grunt less:alt
 };
 

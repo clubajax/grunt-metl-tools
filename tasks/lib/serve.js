@@ -26,6 +26,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-http-server');
 
+    // shortcut
     grunt.registerTask('serve', function () {
         grunt.task.run('http-server');
     });
