@@ -1,6 +1,4 @@
-
 "use strict";
-
 
 module.exports = function (grunt) {
 
@@ -39,8 +37,6 @@ module.exports = function (grunt) {
             lessConfig[key].files[mConfig[key].output] = mConfig[key].src;
         });
     }
-
-
 
     grunt.config('less', lessConfig);
     grunt.loadNpmTasks('grunt-contrib-less');

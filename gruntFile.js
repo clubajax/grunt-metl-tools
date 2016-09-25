@@ -18,6 +18,11 @@ module.exports = function (grunt) {
                 less:['./test/less/*.less'],
                 scripts:['./test/**/*.js'],
                 port: 35730
+            },
+            umd:{
+                src:'test/lib',
+                name:'test/dist/compiled.js',
+                ordered: ['main.js', 'sub1.js', 'sub2.js']
             }
         }
     });
