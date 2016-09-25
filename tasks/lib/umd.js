@@ -3,7 +3,7 @@
 var
     prefix =
         '(function (define) {\n'+
-        '\tdefine(["dom", "on", "fx"], function (dom, on, fx) {',
+        '\tdefine([{{DEPSSTR}}], function ({{DEPS}}) {',
 
     suffix =
         '\t});\n' +
@@ -20,13 +20,21 @@ module.exports = function (grunt) {
 
     function runUmd () {
         var
+            fs = require('fs'),
             config = grunt.config('metl.umd') || {},
             files,
+            deps = config.dependencies || [],
             fileName = config.name,
-            fs = require('fs'),
             dir = config.src || './src',
             ordered = config.ordered || [],
-            final = prefix + '\n';
+            final;
+
+        prefix = prefix.replace('{{DEPS}}', deps.join(', '));
+        prefix = prefix.replace('{{DEPSSTR}}', deps.map(function (dep) {
+            return '"' + dep + '"';
+        }).join(', '));
+
+        final = prefix + '\n';
 
         function stripIIFE(file, index) {
             var beg = file.search(/\(function\s*\(/),

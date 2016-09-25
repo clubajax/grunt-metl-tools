@@ -22,7 +22,8 @@ module.exports = function (grunt) {
             umd:{
                 src:'test/lib',
                 name:'test/dist/compiled.js',
-                ordered: ['main.js', 'sub1.js', 'sub2.js']
+                ordered: ['main.js', 'sub1.js', 'sub2.js'],
+                dependencies:['dom', 'on']
             }
         }
     });
